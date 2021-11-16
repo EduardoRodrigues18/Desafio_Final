@@ -1,0 +1,10 @@
+{
+  "login_valido":{
+    "email": "sauceemail@hot.com",
+    "senha": "secret_sauce"
+  },
+  "login_invalido":{
+    "email": "invalido@hot.com",
+    "senha": "invalido"
+  }
+}
