@@ -18,3 +18,13 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+Cypress.Server.defaults({
+    ignore: (xhr) => {
+        return true;
+    }
+})
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    console.log(err)
+    return false
+})

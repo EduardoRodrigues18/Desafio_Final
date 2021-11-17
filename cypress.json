@@ -1,7 +1,5 @@
 {
-    "env": {
-        "BASE_URL": "https://701523.commercesuite.com.br"
-    },
+    "$schema": "https://on.cypress.io/cypress.schema.json",
     "chromeWebSecurity": false,
     "video": false,
     "screenshot": false,
@@ -15,5 +13,6 @@
         "reportTitles": "Relatorio",
         "cdn": true,
         "charts": true
-    }    
+    },
+    "watchForFileChanges": false
 }
