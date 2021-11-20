@@ -6,7 +6,14 @@ export default class LoginSite extends Base{
         cy.visit(Cypress.env("BASE_URL"))
     }
     static elementosDaPagina(){
-        //super.verifyIfElementExists(LOGIN.BOTAO_LOGIN)
+        super.verifyIfElementExists(LOGIN.BANNER)
+        super.verifyIfElementExists(LOGIN.BOTAO_ENTRAR)
+        super.verifyIfElementExists(LOGIN.CARRINHO)
+        super.verifyIfElementExists(LOGIN.INPsearch)
+        super.verifyIfElementExists(LOGIN.PRODUTOS)
+        //super.clickOnElement(LOGIN.BOTAO_ENTRAR)
+    }
+    static efetuarLogin(){
         super.clickOnElement(LOGIN.BOTAO_ENTRAR)
     }
 }

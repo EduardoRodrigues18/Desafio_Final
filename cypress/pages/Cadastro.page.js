@@ -23,17 +23,18 @@ export default class CadastroSite extends Base{
     static cadastrar(){
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
         super.typeValue(CADASTRO.INPdata, '15/04/2000')
-        super.typeValue(CADASTRO.INPcpf, faker.datatype.number(1111111111111))
+        super.typeValue(CADASTRO.INPcpf, `${faker.datatype.number(11111111)}0059`)
         super.typeValue(CADASTRO.INPtelefone, `5433${faker.datatype.number(111111111)}`)
         super.typeValue(CADASTRO.INPcelular, `1191${faker.datatype.number(111111111)}`)
         var email = faker.internet.email()
         super.typeValue(CADASTRO.INPemail, email)
         super.typeValue(CADASTRO.INPemail2, email)
         var password = faker.internet.password()
+        cy.writeFile('./cypress/fixtures/example.json',{email: email, senha: password})
     
         super.typeValue(CADASTRO.INPsenha, password)
         super.typeValue(CADASTRO.INPsenha2, password)
-        super.clickOnElement(CADASTRO.BTNavancar)
+        //super.clickOnElement(CADASTRO.BTNavancar)
 
     }
 }
