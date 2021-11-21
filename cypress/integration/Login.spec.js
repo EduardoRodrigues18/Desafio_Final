@@ -5,6 +5,7 @@ describe('Testes de login:', () => {
     it('deve verificar os elementos da página',() => {
         LoginSite.acesso()
         LoginSite.elementosDaPagina()
+        LoginSite.efetuarLogin()
 
     })
 })
