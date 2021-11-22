@@ -10,7 +10,7 @@ describe('Testes Positivos na página de cadastro',()=>{
         CadastroSite.elementosDaPaginaCasastro()
     })
 
-    it('deve cadastrar um usuario:',()=>{
+    it('deve cadastrar um usuário:',()=>{
         CadastroSite.cadastrar()
     })
 
