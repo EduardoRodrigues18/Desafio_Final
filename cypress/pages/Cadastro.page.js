@@ -3,40 +3,43 @@ import Base from './_base.page'
 import { CADASTRO } from './components/Cadastro.elements'
 import faker from 'faker'
 
-function randomiza(n) {
-    var ranNum = Math.round(Math.random()*n);
-    return ranNum;
+const cpf = document.getElementById("cpf"); 
+
+function gerarCpf() {
+  const num1 = aleatorio();
+  const num2 = aleatorio();
+  const num3 = aleatorio();
+  const dig1 = dig(num1, num2, num3);
+  const dig2 = dig(num1, num2, num3, dig1);
+  return `${num1}.${num2}.${num3}-${dig1}${dig2}`;
 }
 
-function mod(dividendo,divisor) {
-    return Math.round(dividendo - (Math.floor(dividendo/divisor)*divisor));
-}
-
-function gerarCPF() {
-    comPontos = true; // TRUE para ativar e FALSE para desativar a pontuação.
+function dig(n1, n2, n3, n4) { 
+  const nums = n1.split("").concat(n2.split(""), n3.split(""));
+  if (n4 !== undefined){ 
+    nums[9] = n4;
+  }
   
-    var n = 9;
-    var n1 = randomiza(n);
-    var n2 = randomiza(n);
-    var n3 = randomiza(n);
-    var n4 = randomiza(n);
-    var n5 = randomiza(n);
-    var n6 = randomiza(n);
-    var n7 = randomiza(n);
-    var n8 = randomiza(n);
-    var n9 = randomiza(n);
-    var d1 = n9*2+n8*3+n7*4+n6*5+n5*6+n4*7+n3*8+n2*9+n1*10;
-    d1 = 11 - ( mod(d1,11) );
-    if (d1>=10) d1 = 0;
-    var d2 = d1*2+n9*3+n8*4+n7*5+n6*6+n5*7+n4*8+n3*9+n2*10+n1*11;
-    d2 = 11 - ( mod(d2,11) );
-    if (d2>=10) d2 = 0;
-    retorno = '';
-    if (comPontos) cpf = ''+n1+n2+n3+'.'+n4+n5+n6+'.'+n7+n8+n9+'-'+d1+d2;
-    else cpf = ''+n1+n2+n3+n4+n5+n6+n7+n8+n9+d1+d2;
-
-    alert(cpf);
+  let x = 0;
+  for (let i = (n4 !== undefined ? 11:10), j = 0; i >= 2; i--, j++) {
+    x += parseInt(nums[j]) * i;
+  }
+  
+  const y = x % 11;
+  return y < 2 ? 0 : 11 - y; 
 }
+
+function aleatorio() {
+  const aleat = Math.floor(Math.random() * 999);
+  return ("" + aleat).padStart(3, '0'); 
+}
+var CPF = gerarCpf()
+var NumeroTel= `5433${faker.datatype.number(111111111)}`
+var NumeroCell=`1191${faker.datatype.number(111111111)}`
+var password = faker.internet.password()
+var passwordNegativo = faker.internet.password()
+var email = faker.internet.email()
+var emailNegativo = faker.internet.email()
 
 export default class CadastroSite extends Base{
     static acessoCadastro(){
@@ -56,13 +59,9 @@ export default class CadastroSite extends Base{
         super.verifyIfElementExists(CADASTRO.BTNcadastro)
     }
     static cadastrar(){
-        var CPF = gerarCPF()
-        var NumeroTel= `5433${faker.datatype.number(111111111)}`
-        var NumeroCell=`1191${faker.datatype.number(111111111)}`
-        var password = faker.internet.password()
-        var email = faker.internet.email()
+
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
-        //super.typeValue(CADASTRO.INPdata, '15/04/2000')
+        super.typeValue(CADASTRO.INPdata, "16/04/2001")
         super.typeValue(CADASTRO.INPcpf, CPF)
         super.typeValue(CADASTRO.INPtelefone, NumeroTel)
         super.typeValue(CADASTRO.INPcelular, NumeroCell)
@@ -75,4 +74,42 @@ export default class CadastroSite extends Base{
 
     }
 
+    static cadastrarSemEmail(){
+
+        super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
+        super.typeValue(CADASTRO.INPdata, "16/04/2001")
+        super.typeValue(CADASTRO.INPcpf, gerarCpf())
+        super.typeValue(CADASTRO.INPtelefone, NumeroTel)
+        super.typeValue(CADASTRO.INPcelular, NumeroCell)
+        super.typeValue(CADASTRO.INPsenha, passwordNegativo)
+        super.typeValue(CADASTRO.INPsenha2, passwordNegativo)
+        super.clickOnElement(CADASTRO.BTNavancar)
+        super.verifyIfElementExists(CADASTRO.MSGErroEmail)
+    }
+
+    static cadastrarSemSenha(){
+
+        super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
+        super.typeValue(CADASTRO.INPdata, "16/04/2001")
+        super.typeValue(CADASTRO.INPcpf, gerarCpf())
+        super.typeValue(CADASTRO.INPtelefone, NumeroTel)
+        super.typeValue(CADASTRO.INPcelular, NumeroCell)
+        super.typeValue(CADASTRO.INPemail, emailNegativo)
+        super.typeValue(CADASTRO.INPemail2, emailNegativo)
+        super.clickOnElement(CADASTRO.BTNavancar)
+        super.verifyIfElementExists(CADASTRO.MSGErroEmail)
+    }
+
+    static cadastrarSemCPF(){
+        super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
+        super.typeValue(CADASTRO.INPdata, "16/04/2001")
+        super.typeValue(CADASTRO.INPtelefone, NumeroTel)
+        super.typeValue(CADASTRO.INPcelular, NumeroCell)
+        super.typeValue(CADASTRO.INPemail, emailNegativo)
+        super.typeValue(CADASTRO.INPemail2, emailNegativo)
+        super.typeValue(CADASTRO.INPsenha, passwordNegativo)
+        super.typeValue(CADASTRO.INPsenha2, passwordNegativo)
+        super.clickOnElement(CADASTRO.BTNavancar)
+        super.verifyIfElementExists(CADASTRO.MSGErroCPF)
+    }
 }

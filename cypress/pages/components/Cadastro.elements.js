@@ -10,5 +10,8 @@ export const CADASTRO = {
     INPemail2 : "[id='email_cliente2']",
     INPsenha : "[id='senha_cliente']",
     INPsenha2 : "[id='senha_cliente2']",
-    BTNavancar : "[class='botao-commerce-img']"
+    BTNavancar : "[class='botao-commerce-img']",
+    MSGErroEmail: "[id='email_cliente_erro']",
+    MSGErroSenha : "[id='senha_cliente_erro']",
+    MSGErroCPF: "[id='pf_cpf_cliente_erro']"
 }

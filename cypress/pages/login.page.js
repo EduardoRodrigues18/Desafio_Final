@@ -3,17 +3,44 @@ import { LOGIN } from './components/login.elements'
 
 export default class LoginSite extends Base{
     static acesso(){
-        cy.visit(Cypress.env("BASE_URL"))
+        cy.visit("https://701523.commercesuite.com.br/central-do-cliente")
     }
-    static elementosDaPagina(){
-        super.verifyIfElementExists(LOGIN.BANNER)
+    static elementosDaPaginaLogin(){
         super.verifyIfElementExists(LOGIN.BOTAO_ENTRAR)
-        super.verifyIfElementExists(LOGIN.CARRINHO)
+        super.clickOnElement(LOGIN.BOTAO_LOGIN)
+        super.typeValue(LOGIN.INP_EMAIL, "emailteste@gmail.com")
+        super.verifyIfElementExists(LOGIN.BOTAO_CONTINUARemail)
+        super.clickOnElement(LOGIN.BOTAO_CONTINUARemail)
+        super.verifyIfElementExists(LOGIN.BOTAO_CONTINUARsenha)
         super.verifyIfElementExists(LOGIN.INPsearch)
-        super.verifyIfElementExists(LOGIN.PRODUTOS)
-        super.clickOnElement(LOGIN.BOTAO_ENTRAR)
     }
     static efetuarLogin(){
         super.clickOnElement(LOGIN.BOTAO_LOGIN)
+        cy.fixture("example").then((user)=>{
+            super.typeValue(LOGIN.INP_EMAIL ,user.email)
+            super.clickOnElement(LOGIN.BOTAO_CONTINUARemail)
+            super.typeValue(LOGIN.INP_SENHA, user.senha)
+            super.clickOnElement(LOGIN.BOTAO_CONTINUARsenha)
+            super.clickOnElement(LOGIN.BOTAO_INICIO)
+        })
+    }
+    static efetuarLoginSemEmail(){
+        super.clickOnElement(LOGIN.BOTAO_LOGIN)
+        cy.fixture("example").then((user)=>{
+            super.typeValue(LOGIN.INP_EMAIL, "emailerrado@gmail.com")
+            super.clickOnElement(LOGIN.BOTAO_CONTINUARemail)
+            super.typeValue(LOGIN.INP_SENHA, user.senha)
+            super.clickOnElement(LOGIN.BOTAO_CONTINUARsenha)
+        })
+        
+    }
+    static efetuarLoginComSenhaErrada(){
+        super.clickOnElement(LOGIN.BOTAO_LOGIN)
+        cy.fixture("example").then((user)=>{
+            super.typeValue(LOGIN.INP_EMAIL ,user.email)
+            super.clickOnElement(LOGIN.BOTAO_CONTINUARemail)
+            super.typeValue(LOGIN.INP_SENHA, "senhaErrada")
+            super.clickOnElement(LOGIN.BOTAO_CONTINUARsenha)
+        })
     }
 }
