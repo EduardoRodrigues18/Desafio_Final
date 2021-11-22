@@ -33,6 +33,7 @@ function aleatorio() {
   const aleat = Math.floor(Math.random() * 999);
   return ("" + aleat).padStart(3, '0'); 
 }
+
 var CPF = gerarCpf()
 var NumeroTel= `5433${faker.datatype.number(111111111)}`
 var NumeroCell=`1191${faker.datatype.number(111111111)}`

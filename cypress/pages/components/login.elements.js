@@ -7,8 +7,4 @@ export const LOGIN = {
     BOTAO_CONTINUARemail: "[id='tray-login-identify']",
     BOTAO_CONTINUARsenha: "[id='password-submit']",
     BOTAO_INICIO: "[class='app__header__logo-wrapper']",
-    PRODUTOS: "[class='product-info']",
-    CARRINHO: "[class='cart-mini']",
-    BANNER: "[class='cep-col']",
-    
 }
