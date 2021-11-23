@@ -17,6 +17,7 @@ export default class LoginSite extends Base{
 
 
     static efetuarLogin(){
+        cy.visit(LOGIN.URL)
         super.clickOnElement(LOGIN.BOTAO_LOGIN)
         cy.fixture("example").then((user)=>{
             super.typeValue(LOGIN.INP_EMAIL ,user.email)
@@ -39,7 +40,7 @@ export default class LoginSite extends Base{
         
     }
 
-    
+
     static efetuarLoginComSenhaErrada(){
         super.clickOnElement(LOGIN.BOTAO_LOGIN)
         cy.fixture("example").then((user)=>{

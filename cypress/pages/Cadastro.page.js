@@ -41,6 +41,7 @@ var password = faker.internet.password()
 var passwordNegativo = faker.internet.password()
 var email = faker.internet.email()
 var emailNegativo = faker.internet.email()
+var INPnome = `${faker.name.firstName()} ${faker.name.lastName()}`
 
 export default class CadastroSite extends Base{
     static acessoCadastro(){
@@ -65,7 +66,7 @@ export default class CadastroSite extends Base{
 
     static cadastrar(){
 
-        super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
+        super.typeValue(CADASTRO.INPnome, INPnome)
         super.typeValue(CADASTRO.INPdata, "16/04/2001")
         super.typeValue(CADASTRO.INPcpf, CPF)
         super.typeValue(CADASTRO.INPtelefone, NumeroTel)
@@ -75,7 +76,7 @@ export default class CadastroSite extends Base{
         super.typeValue(CADASTRO.INPsenha, password)
         super.typeValue(CADASTRO.INPsenha2, password)
         super.clickOnElement(CADASTRO.BTNavancar)
-        cy.writeFile('./cypress/fixtures/example.json',{email: email, senha: password, CPF: CPF, NumeroCelular: NumeroCell, NumeroTelefone: NumeroTel})
+        cy.writeFile('./cypress/fixtures/example.json',{nome: INPnome, email: email, senha: password, CPF: CPF, NumeroCelular: NumeroCell, NumeroTelefone: NumeroTel})
 
     }
 
@@ -106,7 +107,7 @@ export default class CadastroSite extends Base{
         super.clickOnElement(CADASTRO.BTNavancar)
         super.verifyIfElementExists(CADASTRO.MSGErroEmail)
     }
-    
+
 
     static cadastrarSemCPF(){
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
