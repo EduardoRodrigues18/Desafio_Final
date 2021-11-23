@@ -46,6 +46,8 @@ export default class CadastroSite extends Base{
     static acessoCadastro(){
         cy.visit(CADASTRO.URL)
     }
+
+
     static elementosDaPaginaCasastro(){
         super.verifyIfElementExists(CADASTRO.INPnome)
         super.verifyIfElementExists(CADASTRO.INPdata)
@@ -59,6 +61,8 @@ export default class CadastroSite extends Base{
         super.verifyIfElementExists(CADASTRO.BTNavancar)
         super.verifyIfElementExists(CADASTRO.BTNcadastro)
     }
+
+
     static cadastrar(){
 
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
@@ -75,6 +79,7 @@ export default class CadastroSite extends Base{
 
     }
 
+
     static cadastrarSemEmail(){
 
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
@@ -88,6 +93,7 @@ export default class CadastroSite extends Base{
         super.verifyIfElementExists(CADASTRO.MSGErroEmail)
     }
 
+
     static cadastrarSemSenha(){
 
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)
@@ -100,6 +106,7 @@ export default class CadastroSite extends Base{
         super.clickOnElement(CADASTRO.BTNavancar)
         super.verifyIfElementExists(CADASTRO.MSGErroEmail)
     }
+    
 
     static cadastrarSemCPF(){
         super.typeValue(CADASTRO.INPnome, `${faker.name.firstName()} ${faker.name.lastName()}`)

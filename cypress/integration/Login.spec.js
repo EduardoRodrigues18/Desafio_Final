@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import LoginSite from "../pages/login.page"
 
-describe('Testes Positivos de login:', () => {
+describe('Testes Positivos na rota login:', () => {
     beforeEach(()=>{
         LoginSite.acesso()
     })
@@ -17,7 +17,7 @@ describe('Testes Positivos de login:', () => {
 
 })
 
-describe('Testes Negativos de login',()=>{
+describe('Testes Negativos na rota login',()=>{
     beforeEach(()=>{
         LoginSite.acesso()
     })

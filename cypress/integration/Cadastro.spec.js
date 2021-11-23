@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import CadastroSite from "../pages/Cadastro.page";
 
-describe('Testes Positivos na página de cadastro',()=>{
+describe('Testes Positivos na rota cadastro',()=>{
     beforeEach(()=>{
         CadastroSite.acessoCadastro()
     })
@@ -15,7 +15,7 @@ describe('Testes Positivos na página de cadastro',()=>{
     })
 
 })
-describe('Testes Negativos na página de cadastro',()=>{
+describe('Testes Negativos na rota cadastro',()=>{
     beforeEach(()=>{
         CadastroSite.acessoCadastro()
     })

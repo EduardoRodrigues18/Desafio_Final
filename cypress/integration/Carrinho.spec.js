@@ -1,14 +1,19 @@
 /// <reference types="cypress" />
 import CarrinhoSite from "../pages/Carrinho.page"
 
-describe('Testes Positivos de Produtos',()=>{
+describe('Testes Positivos na rota Produtos',()=>{
     beforeEach(()=>{
         CarrinhoSite.acesso()
     })
     it("verifica elementos da página inicial",()=>{
         CarrinhoSite.elementosDaPaginaInicial()
     })
-    it.only("Adiciona produto ao carrinho",()=>{
+    it("Adiciona produto ao carrinho",()=>{
         CarrinhoSite.produtoNoCarrinho()
     })
+})
+
+
+describe('Testes Negativos na rota Produtos',()=>{
+    
 })

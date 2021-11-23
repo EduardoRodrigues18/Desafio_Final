@@ -3,7 +3,7 @@ import { LOGIN } from './components/login.elements'
 
 export default class LoginSite extends Base{
     static acesso(){
-        cy.visit("https://701523.commercesuite.com.br/central-do-cliente")
+        cy.visit(LOGIN.URL)
     }
     static elementosDaPaginaLogin(){
         super.verifyIfElementExists(LOGIN.BOTAO_ENTRAR)
@@ -14,6 +14,8 @@ export default class LoginSite extends Base{
         super.verifyIfElementExists(LOGIN.BOTAO_CONTINUARsenha)
         super.verifyIfElementExists(LOGIN.INPsearch)
     }
+
+
     static efetuarLogin(){
         super.clickOnElement(LOGIN.BOTAO_LOGIN)
         cy.fixture("example").then((user)=>{
@@ -24,6 +26,8 @@ export default class LoginSite extends Base{
             super.clickOnElement(LOGIN.BOTAO_INICIO)
         })
     }
+
+
     static efetuarLoginSemEmail(){
         super.clickOnElement(LOGIN.BOTAO_LOGIN)
         cy.fixture("example").then((user)=>{
@@ -34,6 +38,8 @@ export default class LoginSite extends Base{
         })
         
     }
+
+    
     static efetuarLoginComSenhaErrada(){
         super.clickOnElement(LOGIN.BOTAO_LOGIN)
         cy.fixture("example").then((user)=>{
