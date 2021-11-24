@@ -11,8 +11,9 @@ describe('Testes Positivos na rota login:', () => {
 
     })
 
-    it('Deve efetuar Login',()=>{
+    it.only('Deve efetuar Login',()=>{
         LoginSite.efetuarLogin()
+        LoginSite.cadastroDeEndereco()
     })
 
 })

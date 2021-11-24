@@ -10,7 +10,7 @@ describe('Testes Positivos na rota cadastro',()=>{
         CadastroSite.elementosDaPaginaCasastro()
     })
 
-    it('deve cadastrar um usuário:',()=>{
+    it.only('deve cadastrar um usuário:',()=>{
         CadastroSite.cadastrar()
     })
 

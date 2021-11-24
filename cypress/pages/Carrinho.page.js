@@ -2,6 +2,12 @@
 import Base from './_base.page'
 import {CARRINHO} from './components/Carrinho.elements'
 
+
+
+
+
+
+
 export default class CarrinhoSite extends Base{
     static acesso(){
        cy.visit(CARRINHO.URL)
@@ -19,21 +25,34 @@ export default class CarrinhoSite extends Base{
 
 
     static produtoNoCarrinho(){
-        super.clickOnElement(CARRINHO.BOTAO_adicionarProduto)
+        super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})
         super.clickOnElement(CARRINHO.CARRINHO_MODAL)
         super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHO)
-        super.clickOnElement(CARRINHO.CARRINHO_MODAL)
+        cy.wait(5000)
+        super.clickOnElement(CARRINHO.BTN_FinalizarPedido)
 
     }
 
 
-    static acessoCarrinho(){
+    static CheckoutCarrinho(){
         cy.fixture("example").then((user)=>{
-            cy.visit(CARRINHO.URL_COM_PRODUTO)
+            super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})
+            super.clickOnElement(CARRINHO.CARRINHO_MODAL)
+            super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHO)
+            cy.wait(5000)
+            super.clickOnElement(CARRINHO.BTN_FinalizarPedido)
             super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHOpg)
             super.clickOnElement(CARRINHO.CONTINUAR_CARRINHO)
             super.typeValue(CARRINHO.INP_CPF, user.CPF)
             super.clickOnElement(CARRINHO.CONTINUAR_CPF)
         })
+    }
+
+    static deletarProdutoDoCarrinho(){
+        super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})
+        super.clickOnElement(CARRINHO.CARRINHO_MODAL)
+        super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHO)
+        super.clickOnElement(CARRINHO.BTN_limparCarrinho)
+        super.getElement(CARRINHO.CARRINHO_MODAL).should("contain", 0)
     }
 }
