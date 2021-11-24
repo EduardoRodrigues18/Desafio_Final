@@ -33,6 +33,18 @@ export default class CarrinhoSite extends Base{
 
     }
 
+    static elementosDaPaginaCarrinho(){
+        super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})
+        super.clickOnElement(CARRINHO.CARRINHO_MODAL)
+        super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHO)
+        cy.wait(5000)
+        super.clickOnElement(CARRINHO.BTN_FinalizarPedido)
+        super.verifyIfElementExists(CARRINHO.CONTINUAR_CARRINHO)
+        super.verifyIfElementExists(CARRINHO.ProdutoNaPaginaCarrinho)
+        super.verifyIfElementExists(CARRINHO.INP_CEPNaPaginaCarrinho)
+
+    }
+
 
     static CheckoutCarrinho(){
         cy.fixture("example").then((user)=>{
@@ -41,7 +53,7 @@ export default class CarrinhoSite extends Base{
             super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHO)
             cy.wait(5000)
             super.clickOnElement(CARRINHO.BTN_FinalizarPedido)
-            super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHOpg)
+            super.verifyIfElementExists(CARRINHO.ProdutoNaPaginaCarrinho)
             super.clickOnElement(CARRINHO.CONTINUAR_CARRINHO)
             super.typeValue(CARRINHO.INP_CPF, user.CPF)
             super.clickOnElement(CARRINHO.CONTINUAR_CPF)

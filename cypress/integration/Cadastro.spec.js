@@ -15,6 +15,8 @@ describe('Testes Positivos na rota cadastro',()=>{
     })
 
 })
+
+
 describe('Testes Negativos na rota cadastro',()=>{
     beforeEach(()=>{
         CadastroSite.acessoCadastro()

@@ -12,8 +12,16 @@ export const CARRINHO={
     BTN_FinalizarPedido: '[class="btn-load-more"]',
     BTN_limparCarrinho: '[class="btn-clear"]',
     MSG_CarrinhoVazio: "[class='ch-title-3']",
-    PRODUTO_NO_CARRINHOpg: ".ch-cart-product-figure",
+
+
+
+    ProdutoNaPaginaCarrinho: ".ch-cart-product-figure",
     CONTINUAR_CARRINHO: ".hidden-xs > .btn-next-step",
     INP_CPF: "[id='login-email']",
-    CONTINUAR_CPF: "[class='btn-next-step always-visible']"
+    CONTINUAR_CPF: "[class='btn-next-step always-visible']",
+    INP_CEPNaPaginaCarrinho: '[id="cart-shipping"]',
+
+
+
 }
+
