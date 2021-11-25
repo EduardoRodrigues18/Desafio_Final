@@ -1,0 +1,205 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-25T18:04:57.520Z",
+    "end": "2021-11-25T18:05:43.757Z",
+    "duration": 46237,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ef331961-2313-4930-ad33-b0da7435ea9a",
+      "title": "",
+      "fullFile": "cypress/integration/Cadastro.spec.js",
+      "file": "cypress/integration/Cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f64f53e6-4c28-4a84-a140-9710989b6480",
+          "title": "Testes Positivos na rota cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve verificar elementos da página: ",
+              "fullTitle": "Testes Positivos na rota cadastro Deve verificar elementos da página: ",
+              "timedOut": null,
+              "duration": 5507,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Cadastro.default.elementosDaPaginaCasastro();",
+              "err": {},
+              "uuid": "116496a4-0fb0-490d-b5e2-c952553cb0fb",
+              "parentUUID": "f64f53e6-4c28-4a84-a140-9710989b6480",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deve cadastrar um usuário:",
+              "fullTitle": "Testes Positivos na rota cadastro deve cadastrar um usuário:",
+              "timedOut": null,
+              "duration": 12250,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Cadastro.default.cadastrar();",
+              "err": {},
+              "uuid": "ddec9d67-e0f0-4b5e-a763-a635c54fcfac",
+              "parentUUID": "f64f53e6-4c28-4a84-a140-9710989b6480",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "116496a4-0fb0-490d-b5e2-c952553cb0fb",
+            "ddec9d67-e0f0-4b5e-a763-a635c54fcfac"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17757,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "c025eba9-5159-42e7-ac9d-ee2ec79d9a6f",
+          "title": "Testes Negativos na rota cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve tentar cadastrar sem email",
+              "fullTitle": "Testes Negativos na rota cadastro Deve tentar cadastrar sem email",
+              "timedOut": null,
+              "duration": 7444,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Cadastro.default.cadastrarSemEmail();",
+              "err": {},
+              "uuid": "c2142a09-fe5c-4722-9d53-40134f83de15",
+              "parentUUID": "c025eba9-5159-42e7-ac9d-ee2ec79d9a6f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve tentar cadastrar sem senha",
+              "fullTitle": "Testes Negativos na rota cadastro Deve tentar cadastrar sem senha",
+              "timedOut": null,
+              "duration": 7996,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Cadastro.default.cadastrarSemSenha();",
+              "err": {},
+              "uuid": "be4da62f-fb0b-40e8-be99-80959a65faed",
+              "parentUUID": "c025eba9-5159-42e7-ac9d-ee2ec79d9a6f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve tentar cadastrar sem CPF",
+              "fullTitle": "Testes Negativos na rota cadastro Deve tentar cadastrar sem CPF",
+              "timedOut": null,
+              "duration": 7750,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Cadastro.default.cadastrarSemCPF();",
+              "err": {},
+              "uuid": "5e0ae80c-33f2-4633-a4cb-8e52c3b9e51f",
+              "parentUUID": "c025eba9-5159-42e7-ac9d-ee2ec79d9a6f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c2142a09-fe5c-4722-9d53-40134f83de15",
+            "be4da62f-fb0b-40e8-be99-80959a65faed",
+            "5e0ae80c-33f2-4633-a4cb-8e52c3b9e51f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 23190,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss",
+        "reportTitles": "Relatorio",
+        "cdn": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
