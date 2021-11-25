@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-25T18:05:46.321Z",
+    "end": "2021-11-25T18:07:44.297Z",
+    "duration": 117976,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "60767b55-bcb1-43f9-a678-985bdde3809a",
+      "title": "",
+      "fullFile": "cypress/integration/Carrinho.spec.js",
+      "file": "cypress/integration/Carrinho.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "16117c91-0032-40ff-9883-bdd63c9911f7",
+          "title": "Testes Positivos na rota Produtos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifica elementos da página inicial",
+              "fullTitle": "Testes Positivos na rota Produtos verifica elementos da página inicial",
+              "timedOut": null,
+              "duration": 5971,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Carrinho.default.elementosDaPaginaInicial();",
+              "err": {},
+              "uuid": "db3ee6f5-2a8f-420d-b5cc-8a021ab6aff0",
+              "parentUUID": "16117c91-0032-40ff-9883-bdd63c9911f7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona produto ao carrinho",
+              "fullTitle": "Testes Positivos na rota Produtos Adiciona produto ao carrinho",
+              "timedOut": null,
+              "duration": 14226,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Carrinho.default.produtoNoCarrinho();",
+              "err": {},
+              "uuid": "6fe763f0-4516-42f6-9a43-9d8222388519",
+              "parentUUID": "16117c91-0032-40ff-9883-bdd63c9911f7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica elementos da Página carrinho",
+              "fullTitle": "Testes Positivos na rota Produtos verifica elementos da Página carrinho",
+              "timedOut": null,
+              "duration": 13047,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Carrinho.default.elementosDaPaginaCarrinho();",
+              "err": {},
+              "uuid": "d07ce307-fa51-4b88-8270-58f3c5aa9c12",
+              "parentUUID": "16117c91-0032-40ff-9883-bdd63c9911f7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teste de Checkout da Compra:",
+              "fullTitle": "Testes Positivos na rota Produtos Teste de Checkout da Compra:",
+              "timedOut": null,
+              "duration": 45410,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.efetuarLogin();\n_Carrinho.default.CheckoutCarrinho();",
+              "err": {},
+              "uuid": "7d156fbe-7a25-4611-bd45-0e511cad7aa0",
+              "parentUUID": "16117c91-0032-40ff-9883-bdd63c9911f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "db3ee6f5-2a8f-420d-b5cc-8a021ab6aff0",
+            "6fe763f0-4516-42f6-9a43-9d8222388519",
+            "d07ce307-fa51-4b88-8270-58f3c5aa9c12",
+            "7d156fbe-7a25-4611-bd45-0e511cad7aa0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 78654,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "50061174-b8a1-4db8-8d04-732198951985",
+          "title": "Testes Negativos na rota Produtos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve não conter itens no carrinho",
+              "fullTitle": "Testes Negativos na rota Produtos Deve não conter itens no carrinho",
+              "timedOut": null,
+              "duration": 9253,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_Carrinho.default.deletarProdutoDoCarrinho();",
+              "err": {},
+              "uuid": "8bceeae6-091b-4e9c-a210-ab867471aebd",
+              "parentUUID": "50061174-b8a1-4db8-8d04-732198951985",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve Tentar fazer checkout com CPF errado",
+              "fullTitle": "Testes Negativos na rota Produtos Deve Tentar fazer checkout com CPF errado",
+              "timedOut": null,
+              "duration": 28050,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.efetuarLogin();\n_Carrinho.default.CheckoutCarrinhoComCPFErrado();",
+              "err": {},
+              "uuid": "9f9d1c1f-266a-4b86-afb2-d715e1fca9cf",
+              "parentUUID": "50061174-b8a1-4db8-8d04-732198951985",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8bceeae6-091b-4e9c-a210-ab867471aebd",
+            "9f9d1c1f-266a-4b86-afb2-d715e1fca9cf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37303,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss",
+        "reportTitles": "Relatorio",
+        "cdn": true,
+        "charts": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

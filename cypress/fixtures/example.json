@@ -1,10 +1,12 @@
 {
-  "login_valido":{
-    "email": "sauceemail@hot.com",
-    "senha": "secret_sauce"
-  },
-  "login_invalido":{
-    "email": "invalido@hot.com",
-    "senha": "invalido"
-  }
+  "nome": "Mikel Moore",
+  "email": "Madalyn60@gmail.com",
+  "senha": "VoA5oTshsXDxZEr",
+  "CPF": "373.904.479-90",
+  "NumeroCelular": "119117487861",
+  "NumeroTelefone": "5433110741396",
+  "NomeDoEndereco": "Rua Mário Chalbald Biscaia",
+  "CEP": "81050-240",
+  "Numero": "N°10",
+  "complemento": "Perto da escola tal"
 }

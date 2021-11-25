@@ -88,4 +88,5 @@ export default class Base {
     cy.url().should('include', url)
   }
   
+  
 }
