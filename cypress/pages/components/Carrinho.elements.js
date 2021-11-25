@@ -22,6 +22,10 @@ export const CARRINHO={
     INP_CEPNaPaginaCarrinho: '[id="cart-shipping"]',
 
 
+    PERGUNTA: '[data-tray-tst="security_question"]',
+    ESCOLHA: '[class*=secret-answer]'
+
+
 
 }
 

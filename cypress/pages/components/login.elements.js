@@ -24,5 +24,5 @@ export const LOGIN = {
     INP_Numero: '[id="address-number"]',
     INP_Complemento: '[id="address-complement"]',
     INP_Bairro: '[id="address-neighborhood"]',
-    BTN_SalvarAlteracoes: '[class="app__button"]',
+    BTN_SalvarAlteracoes: '[class="app__button app__button--primary app__button--no-margin"]',
 }

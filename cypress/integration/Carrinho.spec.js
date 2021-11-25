@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import CarrinhoSite from "../pages/Carrinho.page"
+import LoginSite from "../pages/login.page"
 
 describe('Testes Positivos na rota Produtos',()=>{
     beforeEach(()=>{
@@ -18,7 +19,8 @@ describe('Testes Positivos na rota Produtos',()=>{
         CarrinhoSite.elementosDaPaginaCarrinho()
     })
 
-    it("Teste de Checkout da Compra:",()=>{
+    it.only("Teste de Checkout da Compra:",()=>{
+        LoginSite.efetuarLogin()
         CarrinhoSite.CheckoutCarrinho()
     })
 })

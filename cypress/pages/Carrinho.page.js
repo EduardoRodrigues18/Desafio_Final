@@ -57,6 +57,37 @@ export default class CarrinhoSite extends Base{
             super.clickOnElement(CARRINHO.CONTINUAR_CARRINHO)
             super.typeValue(CARRINHO.INP_CPF, user.CPF)
             super.clickOnElement(CARRINHO.CONTINUAR_CPF)
+            // var BTN
+
+            // cy.get(CARRINHO.PERGUNTA).then(security=>{
+            //     if(security.find("p:contains('Quais os primeiros digitos do seu CPF?')").length>0){
+            //         cy.log(BTN)
+            //         BTN= user.CPF.substring(0, 6)
+            //         cy.wait(20000)
+            //         cy.log(BTN)
+            //     }else if(security.find("p:contains('Qual o seu sobrenome?')").length>0){
+            //         cy.log(BTN)
+            //         BTN = user.nome.split(' ')[1]
+            //         cy.wait(20000)
+            //         cy.log(BTN)
+            //     }else if(security.find("p:contains('Quais os últimos digitos do seu CPF?')").length>0){
+            //         cy.log(BTN)
+            //         BTN= user.CPF.slice(-6)
+            //         cy.wait(20000)
+            //         cy.log(BTN)
+            //     }else if(security.find("p:contains('Qual o seu endereço de entrega?')").length>0){
+            //         cy.log(BTN)
+            //         BTN= user.NomeDoEndereco.split(0, 6)[2]
+            //         cy.wait(20000)
+            //         cy.log(BTN)
+            //     }
+            //     cy.wait(20000)
+            //     super.getElement(CARRINHO.ESCOLHA).contains(BTN).click()
+
+            // })
+
+
+
         })
     }
 
@@ -67,4 +98,6 @@ export default class CarrinhoSite extends Base{
         super.clickOnElement(CARRINHO.BTN_limparCarrinho)
         super.getElement(CARRINHO.CARRINHO_MODAL).should("contain", 0)
     }
+
+
 }

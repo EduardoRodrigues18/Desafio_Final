@@ -1,13 +1,12 @@
 import Base from './_base.page'
 import { LOGIN } from './components/login.elements'
-import faker from 'faker'
 
 export default class LoginSite extends Base{
     static acesso(){
         cy.visit(LOGIN.URL)
     }
     static cadastroDeEndereco(){
-        cy.fixture("Endereco").then((user)=>{
+        cy.fixture("example").then((user)=>{
             cy.wait(5000)
             super.getElement(LOGIN.BTN_MeusEnderecos).click()
             cy.wait(5000)
@@ -17,6 +16,7 @@ export default class LoginSite extends Base{
             cy.wait(4000)
             super.typeValue(LOGIN.INP_Complemento, user.complemento)
             super.typeValue(LOGIN.INP_Numero, user.Numero)
+            super.clickOnElement(LOGIN.BTN_SalvarAlteracoes)
         })
 
     }
@@ -39,6 +39,7 @@ export default class LoginSite extends Base{
             super.clickOnElement(LOGIN.BTN_CONTINUARemail)
             super.typeValue(LOGIN.INP_SENHA, user.senha)
             super.clickOnElement(LOGIN.BTN_CONTINUARsenha)
+            super.clickOnElement(LOGIN.BTN_INICIO)
         })
     }
 
