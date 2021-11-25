@@ -33,6 +33,7 @@ export default class CarrinhoSite extends Base{
 
     }
 
+    
     static elementosDaPaginaCarrinho(){
         super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})
         super.clickOnElement(CARRINHO.CARRINHO_MODAL)
@@ -90,6 +91,7 @@ export default class CarrinhoSite extends Base{
 
         })
     }
+
 
     static deletarProdutoDoCarrinho(){
         super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})

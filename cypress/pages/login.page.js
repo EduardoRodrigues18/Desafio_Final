@@ -5,6 +5,8 @@ export default class LoginSite extends Base{
     static acesso(){
         cy.visit(LOGIN.URL)
     }
+
+
     static cadastroDeEndereco(){
         cy.fixture("example").then((user)=>{
             cy.wait(5000)
@@ -20,6 +22,8 @@ export default class LoginSite extends Base{
         })
 
     }
+
+    
     static elementosDaPaginaLogin(){
         super.verifyIfElementExists(LOGIN.BTN_ENTRAR)
         super.clickOnElement(LOGIN.BTN_LOGIN)
