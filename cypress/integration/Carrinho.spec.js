@@ -35,5 +35,9 @@ describe('Testes Negativos na rota Produtos',()=>{
         CarrinhoSite.deletarProdutoDoCarrinho()
 
     })
+    it('Deve Tentar fazer checkout com CPF errado',()=>{
+        LoginSite.efetuarLogin()
+        CarrinhoSite.CheckoutCarrinhoComCPFErrado()
+    })
 
 })

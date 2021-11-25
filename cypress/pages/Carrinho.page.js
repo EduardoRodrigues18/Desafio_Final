@@ -101,6 +101,21 @@ export default class CarrinhoSite extends Base{
             })
         })
     }
+    static CheckoutCarrinhoComCPFErrado(){
+        cy.readFile('cypress/fixtures/example.json').then(user=>{
+            cy.wait(4000)
+            super.clickOnElement(LOGIN.BTN_INICIO)
+            super.getElement(CARRINHO.BOTAO_adicionarProduto).first().click({force: true})
+            super.clickOnElement(CARRINHO.CARRINHO_MODAL)
+            super.verifyIfElementExists(CARRINHO.PRODUTO_NO_CARRINHO)
+            cy.wait(5000)
+            super.clickOnElement(CARRINHO.BTN_FinalizarPedido)
+            super.verifyIfElementExists(CARRINHO.ProdutoNaPaginaCarrinho)
+            super.clickOnElement(CARRINHO.CONTINUAR_CARRINHO)
+            super.typeValue(CARRINHO.INP_CPF, 12345678910)
+            super.verifyIfElementExists(CARRINHO.MSG_CPFerrado)
+        })
+    }
 
 
     static deletarProdutoDoCarrinho(){

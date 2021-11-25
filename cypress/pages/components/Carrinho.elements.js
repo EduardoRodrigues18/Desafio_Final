@@ -18,6 +18,7 @@ export const CARRINHO={
     ProdutoNaPaginaCarrinho: ".ch-cart-product-figure",
     CONTINUAR_CARRINHO: ".hidden-xs > .btn-next-step",
     INP_CPF: "[id='login-email']",
+    MSG_CPFerrado : '[data-bind="visible: cpfInvalid"]',
     CONTINUAR_CPF: "[class='btn-next-step always-visible']",
     INP_CEPNaPaginaCarrinho: '[id="cart-shipping"]',
 
