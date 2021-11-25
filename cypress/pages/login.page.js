@@ -43,7 +43,6 @@ export default class LoginSite extends Base{
             super.clickOnElement(LOGIN.BTN_CONTINUARemail)
             super.typeValue(LOGIN.INP_SENHA, user.senha)
             super.clickOnElement(LOGIN.BTN_CONTINUARsenha)
-            super.clickOnElement(LOGIN.BTN_INICIO)
         })
     }
 

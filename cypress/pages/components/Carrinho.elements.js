@@ -23,7 +23,9 @@ export const CARRINHO={
 
 
     PERGUNTA: '[data-tray-tst="security_question"]',
-    ESCOLHA: '[class*=secret-answer]'
+    ESCOLHA: '[class*=secret-answer]',
+    INP_SENHA: '[class="tray-input tray-input-initial"]',
+    BTN_Finish: '[id="password-submit"]'
 
 
 

@@ -14,6 +14,7 @@ export const LOGIN = {
 
 
     BTN_INICIO: "[class='app__header__logo-wrapper']",
+    BTN_MinhaConta: '[class="welcome-link"]',
 
 
     BTN_MeusEnderecos: '[data-icon="map-marked-alt"]',

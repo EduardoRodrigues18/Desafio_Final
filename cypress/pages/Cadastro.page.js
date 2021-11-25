@@ -76,7 +76,8 @@ export default class CadastroSite extends Base{
         super.typeValue(CADASTRO.INPsenha, password)
         super.typeValue(CADASTRO.INPsenha2, password)
         super.clickOnElement(CADASTRO.BTNavancar)
-        cy.writeFile('./cypress/fixtures/example.json',{nome: INPnome, email: email, senha: password, CPF: CPF, NumeroCelular: NumeroCell, NumeroTelefone: NumeroTel, NomeDoEndereco: "Rua tal",CEP: "81050-24",Numero: "N°10",complemento: "Perto da escola tal"})
+        cy.writeFile('./cypress/fixtures/example.json',{nome: INPnome, email: email, senha: password, CPF: CPF, NumeroCelular: NumeroCell, NumeroTelefone: NumeroTel, NomeDoEndereco: "Rua Mário Chalbald Biscaia",CEP: "81050-240",Numero: "N°10",complemento: "Perto da escola tal",})
+        
 
     }
 

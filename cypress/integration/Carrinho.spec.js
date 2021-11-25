@@ -19,7 +19,7 @@ describe('Testes Positivos na rota Produtos',()=>{
         CarrinhoSite.elementosDaPaginaCarrinho()
     })
 
-    it.only("Teste de Checkout da Compra:",()=>{
+    it("Teste de Checkout da Compra:",()=>{
         LoginSite.efetuarLogin()
         CarrinhoSite.CheckoutCarrinho()
     })
