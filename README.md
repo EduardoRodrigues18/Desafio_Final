@@ -1,7 +1,7 @@
 # Projeto_Final
 Testes com Cypress, Site: https://701523.commercesuite.com.br/
 
-
+npm:init para iniciar o Node
 Neste Projeto Foi utilizado Cypress, Mochawesome,Mocha e Chai e Faker, utilizando o comando npm i -D "nome"
 
 Inicialização do Cypress:
