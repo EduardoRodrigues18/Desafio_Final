@@ -9,8 +9,8 @@ npm run cy:open
 
 criando e inicializando o mochawesome:
 com o mochawesome instalado digite os comandos:
-npm run cy:run
-npm run report:merge
+npm run cy:run / 
+npm run report:merge / 
 npm run report:generate
 
 
