@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import LoginSite from "../pages/login.page"
 
 describe('Testes Positivos na rota login:', () => {

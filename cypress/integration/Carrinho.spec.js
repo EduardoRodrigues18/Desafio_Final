@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import CarrinhoSite from "../pages/Carrinho.page"
 import LoginSite from "../pages/login.page"
 

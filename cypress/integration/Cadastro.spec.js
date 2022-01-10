@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import CadastroSite from "../pages/Cadastro.page";
 
 describe('Testes Positivos na rota cadastro',()=>{
